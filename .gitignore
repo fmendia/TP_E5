@@ -1,0 +1,27 @@
+# Quartus build files
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+*.rpt
+*.smsg
+*.bak
+*.log
+*.tmp
+*.ddb
+*.ppf
+*.qws
+
+# Generated files
+*.sof
+*.pof
+*.map
+*.fit
+*.asm
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
