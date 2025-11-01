@@ -74,6 +74,8 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_registerbank.v -section_id RegisterBank_Sim
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_prog_ram.v -section_id tb_prog_ram
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_ifu_with_mem.v -section_id tb_ifu_with_mem
+set_global_assignment -name VERILOG_FILE ../src/OperandBuilder.v
+set_global_assignment -name VERILOG_FILE ../src/decoder.v
 set_global_assignment -name VERILOG_FILE ../tb/tb_registerbank.v
 set_global_assignment -name VERILOG_FILE ../tb/tb_prog_ram.v
 set_global_assignment -name VERILOG_FILE ../tb/tb_ifu_with_mem.v
