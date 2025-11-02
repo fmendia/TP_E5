@@ -42,7 +42,7 @@ always @(*) begin
 				end
 				
 				3'b001, /*SLLI*/ 3'b101: begin
-					imm_ext = {8'b0, instr[24:20], 19'b0};
+					imm_ext = {27'b0, instr[24:20]};
 					case(instr[30])
 						1'b0:	;				//SRLI
 						1'b1: ;				//SRAI
