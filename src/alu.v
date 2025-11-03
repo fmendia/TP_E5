@@ -3,11 +3,34 @@ module alu (
     input  wire [6:0]  iflags,   // opcode
     input  wire [2:0]  funct3,
     input  wire [6:0]  funct7,
-    output reg  [31:0] Result
+    output reg  [31:0] Result,
+    output reg  [5:0]  CCR_flags  // CCR: EQ|NE|LT|GE|LTU|GEU
 );
 
     always @(*) begin
-        Result = 32'b0; // valor por defecto
+        Result = 32'b0;     // valor por defecto
+        CCR_flags = 6'b0;   // valor por defecto del CCR
+
+        //Definir flgas del CCR
+        if(A==B) begin
+            CCR_flags[5] = 1;   // EQ
+            CCR_flags[2] = 1;   // GE
+            CCR_flags[0] = 1;   // GEU           
+        end
+        else begin
+            //Unsigned:
+            if(A<B) begin
+                CCR_flags[1] = 1;
+            end else begin
+                CCR_flags[0] = 1;
+            end
+            //Signed:
+            if($signed(A)<$signed(B)) begin
+                CCR_flags[3] = 1;
+            end else begin
+                CCR_flags[2] = 1;
+            end
+        end
 
         case (iflags)
             // -------------------------------------------------
