@@ -76,9 +76,16 @@ on the Quartus Prime software download page.
 	(port
 		(pt 200 128)
 		(output)
+		(text "reg_flag" (rect 0 0 33 12)(font "Arial" ))
+		(text "reg_flag" (rect 146 123 179 135)(font "Arial" ))
+		(line (pt 200 128)(pt 184 128)(line_width 1))
+	)
+	(port
+		(pt 200 144)
+		(output)
 		(text "imm_ext[31..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "imm_ext[31..0]" (rect 120 123 179 135)(font "Arial" ))
-		(line (pt 200 128)(pt 184 128)(line_width 3))
+		(text "imm_ext[31..0]" (rect 120 139 179 151)(font "Arial" ))
+		(line (pt 200 144)(pt 184 144)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 184 160)(line_width 1))

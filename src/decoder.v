@@ -16,6 +16,7 @@ module decoder(
 	output	wire	[2:0]		funct3,
 	output	wire	[4:0]		rd,
 	output	wire	[6:0]		opcode,
+	output	reg				reg_flag,
 	output	reg	[31:0]	imm_ext
 );
 
@@ -27,6 +28,8 @@ assign rd = instr[11:7];
 assign opcode = instr[6:0];
 
 always @(*) begin
+
+reg_flag <= 0;
 	case(opcode)
 	
 		`I_OP: begin
@@ -62,6 +65,7 @@ always @(*) begin
 			
 				3'b010, /*LW*/ 3'b001, /*LH*/	3'b101, /*LHU*/ 3'b000,	/*LB*/ 3'b100: begin //LBU
 					imm_ext = {{20{instr[31]}}, instr[31:20]};
+					reg_flag <= 1;
 				end
 				
 			endcase
@@ -82,6 +86,7 @@ always @(*) begin
 			
 				3'b010, /*SW*/	3'b001, /*SH*/ 3'b000: begin //SB
 					imm_ext = {{20{instr[31]}}, instr[31:25], instr[11:7]};
+					reg_flag <= 1;
 				end
 			
 			endcase
