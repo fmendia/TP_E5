@@ -71,6 +71,12 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_ifu_with_mem -section_
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_registerbank.v -section_id RegisterBank_Sim
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_prog_ram.v -section_id tb_prog_ram
 set_global_assignment -name EDA_TEST_BENCH_FILE tb_ifu_with_mem.v -section_id tb_ifu_with_mem
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE ../src/mux3_2_32.v
+set_global_assignment -name BDF_FILE IFU.bdf
+set_global_assignment -name VERILOG_FILE ../src/Address_Builder.v
 set_global_assignment -name VERILOG_FILE ../src/OperandBuilder.v
 set_global_assignment -name VERILOG_FILE ../src/decoder.v
 set_global_assignment -name VERILOG_FILE ../tb/tb_registerbank.v
@@ -83,13 +89,9 @@ set_global_assignment -name VERILOG_FILE ../src/alu.v
 set_global_assignment -name VERILOG_FILE ../src/adder4.v
 set_global_assignment -name BDF_FILE uc_top.bdf
 set_global_assignment -name QIP_FILE prog_ram.qip
-set_global_assignment -name BDF_FILE IFU.bdf
 set_global_assignment -name VERILOG_FILE ../src/RegisterBank.v
 set_global_assignment -name MIF_FILE ../mem/prog_ram_test.mif
 set_global_assignment -name BDF_FILE Main.bdf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name QIP_FILE memo_ram.qip
 set_global_assignment -name BDF_FILE test1.bdf

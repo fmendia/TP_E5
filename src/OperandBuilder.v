@@ -28,6 +28,17 @@ module OperandBuilder (
                 A = imm;
                 B = pc;
             end
+				// Tipo J (JAL): A = PC, B = 4
+
+				7'b1101111: begin 
+                A = pc;
+                B = 4;
+            end
+				7'b1100111: begin //JALR
+                A = pc;
+                B = 4;
+            end
+
 
             default: begin
                 A = 32'b0;
