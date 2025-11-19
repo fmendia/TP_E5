@@ -73,6 +73,13 @@ on the Quartus Prime software download page.
 		(text "PC_out[31..0]" (rect 115 43 195 58)(font "Intel Clear" (font_size 8)))
 		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "PCR_out[31..0]" (rect 0 0 88 15)(font "Intel Clear" (font_size 8)))
+		(text "PCR_out[31..0]" (rect 107 59 195 74)(font "Intel Clear" (font_size 8)))
+		(line (pt 216 64)(pt 200 64)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 200 112))
 	)

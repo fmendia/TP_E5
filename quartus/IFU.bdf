@@ -135,6 +135,22 @@ on the Quartus Prime software download page.
 	)
 	(flipy)
 )
+(pin
+	(output)
+	(rect 64 576 240 592)
+	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
+	(text "PCR_out[31..0]" (rect 90 0 163 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
 (symbol
 	(rect 680 288 848 368)
 	(text "adder4" (rect 130 69 163 80)(font "Arial" ))
@@ -299,6 +315,29 @@ on the Quartus Prime software download page.
 	)
 	(flipy)
 )
+(symbol
+	(rect 16 376 96 552)
+	(text "resta_dos" (rect 0 5 11 52)(font "Arial" )(vertical))
+	(text "inst4" (rect 64 8 75 30)(font "Arial" )(vertical))
+	(port
+		(pt 32 0)
+		(input)
+		(text "din[31..0]" (rect 0 0 43 11)(font "Arial" ))
+		(text "din[31..0]" (rect 27 21 38 64)(font "Arial" )(vertical))
+		(line (pt 32 0)(pt 32 16)(line_width 3))
+	)
+	(port
+		(pt 32 176)
+		(output)
+		(text "dout[31..0]" (rect 0 0 50 11)(font "Arial" ))
+		(text "dout[31..0]" (rect 27 113 38 155)(font "Arial" )(vertical))
+		(line (pt 32 176)(pt 32 160)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 64 160))
+	)
+	(flipy_rotate90)
+)
 (connector
 	(pt 848 320)
 	(pt 864 320)
@@ -375,11 +414,6 @@ on the Quartus Prime software download page.
 (connector
 	(pt 200 184)
 	(pt 200 224)
-	(bus)
-)
-(connector
-	(pt 200 224)
-	(pt 200 320)
 	(bus)
 )
 (connector
@@ -467,6 +501,36 @@ on the Quartus Prime software download page.
 (connector
 	(pt 640 416)
 	(pt 640 360)
+	(bus)
+)
+(connector
+	(pt 48 376)
+	(pt 48 368)
+	(bus)
+)
+(connector
+	(pt 48 368)
+	(pt 200 368)
+	(bus)
+)
+(connector
+	(pt 200 224)
+	(pt 200 320)
+	(bus)
+)
+(connector
+	(pt 200 320)
+	(pt 200 368)
+	(bus)
+)
+(connector
+	(pt 48 552)
+	(pt 48 584)
+	(bus)
+)
+(connector
+	(pt 48 584)
+	(pt 64 584)
 	(bus)
 )
 (junction (pt 200 224))
