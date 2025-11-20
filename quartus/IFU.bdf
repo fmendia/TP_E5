@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect 128 480 296 496)
+	(rect 136 488 304 504)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "clk1" (rect 5 0 23 11)(font "Arial" ))
 	(pt 168 8)
@@ -54,7 +54,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect 176 424 344 440)
+	(rect 192 456 360 472)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "pc_rst" (rect 5 0 34 12)(font "Intel Clear" ))
 	(pt 168 8)
@@ -103,6 +103,22 @@ on the Quartus Prime software download page.
 	(text "VCC" (rect 20 7 40 16)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect 168 416 336 432)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "enableIFU" (rect 5 0 54 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 680 96 856 112)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
@@ -137,7 +153,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(output)
-	(rect 64 576 240 592)
+	(rect 8 568 184 584)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "PCR_out[31..0]" (rect 90 0 163 11)(font "Arial" ))
 	(pt 0 8)
@@ -180,43 +196,6 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 152 64))
 	)
 	(rotate180)
-)
-(symbol
-	(rect 240 288 400 400)
-	(text "reg32" (rect 128 0 155 11)(font "Arial" ))
-	(text "inst1" (rect 128 96 152 108)(font "Intel Clear" ))
-	(port
-		(pt 160 32)
-		(input)
-		(text "d[31..0]" (rect 0 0 35 11)(font "Arial" ))
-		(text "d[31..0]" (rect 104 27 139 38)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32)(line_width 3))
-	)
-	(port
-		(pt 160 48)
-		(input)
-		(text "clk" (rect 0 0 12 11)(font "Arial" ))
-		(text "clk" (rect 127 43 139 54)(font "Arial" ))
-		(line (pt 160 48)(pt 144 48))
-	)
-	(port
-		(pt 160 64)
-		(input)
-		(text "rst" (rect 0 0 11 11)(font "Arial" ))
-		(text "rst" (rect 128 59 139 70)(font "Arial" ))
-		(line (pt 160 64)(pt 144 64))
-	)
-	(port
-		(pt 0 32)
-		(output)
-		(text "qo[31..0]" (rect 0 0 41 11)(font "Arial" ))
-		(text "qo[31..0]" (rect 14 27 55 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 144 96))
-	)
-	(flipy)
 )
 (symbol
 	(rect 360 144 392 176)
@@ -316,7 +295,7 @@ on the Quartus Prime software download page.
 	(flipy)
 )
 (symbol
-	(rect 16 376 96 552)
+	(rect -72 368 8 544)
 	(text "resta_dos" (rect 0 5 11 52)(font "Arial" )(vertical))
 	(text "inst4" (rect 64 8 75 30)(font "Arial" )(vertical))
 	(port
@@ -330,13 +309,57 @@ on the Quartus Prime software download page.
 		(pt 32 176)
 		(output)
 		(text "dout[31..0]" (rect 0 0 50 11)(font "Arial" ))
-		(text "dout[31..0]" (rect 27 113 38 155)(font "Arial" )(vertical))
+		(text "dout[31..0]" (rect 27 113 38 163)(font "Arial" )(vertical))
 		(line (pt 32 176)(pt 32 160)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 64 160))
 	)
 	(flipy_rotate90)
+)
+(symbol
+	(rect 240 288 400 400)
+	(text "reg32_enable" (rect 91 0 155 11)(font "Arial" ))
+	(text "inst5" (rect 128 96 152 108)(font "Intel Clear" ))
+	(port
+		(pt 160 32)
+		(input)
+		(text "d[31..0]" (rect 0 0 35 11)(font "Arial" ))
+		(text "d[31..0]" (rect 104 27 139 38)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32)(line_width 3))
+	)
+	(port
+		(pt 160 48)
+		(input)
+		(text "clk" (rect 0 0 12 11)(font "Arial" ))
+		(text "clk" (rect 127 43 139 54)(font "Arial" ))
+		(line (pt 160 48)(pt 144 48))
+	)
+	(port
+		(pt 160 64)
+		(input)
+		(text "rst" (rect 0 0 11 11)(font "Arial" ))
+		(text "rst" (rect 128 59 139 70)(font "Arial" ))
+		(line (pt 160 64)(pt 144 64))
+	)
+	(port
+		(pt 160 80)
+		(input)
+		(text "en" (rect 0 0 11 11)(font "Arial" ))
+		(text "en" (rect 128 75 139 86)(font "Arial" ))
+		(line (pt 160 80)(pt 144 80))
+	)
+	(port
+		(pt 0 32)
+		(output)
+		(text "qo[31..0]" (rect 0 0 41 11)(font "Arial" ))
+		(text "qo[31..0]" (rect 14 27 55 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 96))
+	)
+	(flipy)
 )
 (connector
 	(pt 848 320)
@@ -421,29 +444,8 @@ on the Quartus Prime software download page.
 	(pt 432 336)
 )
 (connector
-	(pt 432 488)
-	(pt 432 336)
-)
-(connector
-	(text "clk" (rect 306 472 320 484)(font "Intel Clear" ))
-	(pt 296 488)
-	(pt 432 488)
-)
-(connector
-	(pt 432 488)
-	(pt 864 488)
-)
-(connector
-	(pt 344 432)
-	(pt 416 432)
-)
-(connector
 	(pt 400 352)
 	(pt 416 352)
-)
-(connector
-	(pt 416 352)
-	(pt 416 432)
 )
 (connector
 	(pt 416 104)
@@ -504,13 +506,13 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(pt 48 376)
-	(pt 48 368)
+	(pt -40 368)
+	(pt -40 360)
 	(bus)
 )
 (connector
-	(pt 48 368)
-	(pt 200 368)
+	(pt 200 360)
+	(pt -40 360)
 	(bus)
 )
 (connector
@@ -520,18 +522,55 @@ on the Quartus Prime software download page.
 )
 (connector
 	(pt 200 320)
-	(pt 200 368)
+	(pt 200 360)
 	(bus)
 )
 (connector
-	(pt 48 552)
-	(pt 48 584)
+	(pt -40 544)
+	(pt -40 576)
 	(bus)
 )
 (connector
-	(pt 48 584)
-	(pt 64 584)
+	(pt -40 576)
+	(pt 8 576)
 	(bus)
+)
+(connector
+	(pt 432 488)
+	(pt 864 488)
+)
+(connector
+	(pt 432 336)
+	(pt 432 488)
+)
+(connector
+	(pt 432 488)
+	(pt 432 496)
+)
+(connector
+	(text "clk" (rect 395 480 409 492)(font "Intel Clear" ))
+	(pt 304 496)
+	(pt 432 496)
+)
+(connector
+	(pt 416 464)
+	(pt 360 464)
+)
+(connector
+	(pt 416 352)
+	(pt 416 464)
+)
+(connector
+	(pt 400 368)
+	(pt 408 368)
+)
+(connector
+	(pt 408 368)
+	(pt 408 424)
+)
+(connector
+	(pt 336 424)
+	(pt 408 424)
 )
 (junction (pt 200 224))
 (junction (pt 200 320))
