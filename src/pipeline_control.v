@@ -31,20 +31,19 @@ module pipeline_control (
     input  wire [4:0] rs2_D,
     input  wire [4:0] rd_D,
     input  wire       reg_flag_D,
+	
 
     // Señales desde Register Read (Stage3)
+	 input  wire [4:0] rs1_R,
+    input  wire [4:0] rs2_R,
     input  wire [4:0] rd_R,
-    input  wire       reg_flag_R,
 
     // Señales desde Execute (Stage4)
     input  wire [4:0] rd_E,
-    input  wire       reg_flag_E,
     input  wire       branch_E,
 
     // Señales desde WriteBack (Stage5)
     input  wire [4:0] rd_W,
-    input  wire       reg_flag_W,
-
     // Señales de control a los latches
     output reg  enable_F_D,
     output reg  enable_D_R,
@@ -73,14 +72,14 @@ module pipeline_control (
 
         // --- RAW1: En ALU hay rd y en R rsi tal que son iguales ---
         // No traer del banco de registros un valor del registro viejo
-        if (reg_flag_E && ((rs1_D == rd_E && rs1_D != 5'd0) || (rs2_D == rd_E && rs2_D != 5'd0))) 
+        if ((rs1_R == rd_E && rs1_R != 5'd0) || (rs2_R == rd_E && rs2_R != 5'd0)) 
 				begin
             hazard_RAW1 = 1'b1;
         end
 
         // --- RAW2: En R tengo un rsi y en W tengo mismo en rd ---
         // Estoy por actualizar el valor del registro, si lo levanta R, el valor es viejo
-        else if (reg_flag_W && ((rs1_D == rd_W && rs1_D != 5'd0) || (rs2_D == rd_W && rs2_D != 5'd0))) begin
+        else if ((rs1_R == rd_W && rs1_R != 5'd0) || (rs2_R == rd_W && rs2_R != 5'd0)) begin
             hazard_RAW2 = 1'b1;
         end
 

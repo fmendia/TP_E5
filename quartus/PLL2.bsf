@@ -1,0 +1,118 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 0 0 232 192)
+	(text "PLL2" (rect 101 0 137 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 177 24 188)(font "Arial" ))
+	(port
+		(pt 0 64)
+		(input)
+		(text "inclk0" (rect 0 0 34 13)(font "Arial" (font_size 8)))
+		(text "inclk0" (rect 4 52 31 63)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 40 64))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "c0" (rect 0 0 14 13)(font "Arial" (font_size 8)))
+		(text "c0" (rect 216 52 226 63)(font "Arial" (font_size 8)))
+	)
+	(port
+		(pt 232 80)
+		(output)
+		(text "c1" (rect 0 0 14 13)(font "Arial" (font_size 8)))
+		(text "c1" (rect 216 68 225 79)(font "Arial" (font_size 8)))
+	)
+	(port
+		(pt 232 96)
+		(output)
+		(text "c2" (rect 0 0 14 13)(font "Arial" (font_size 8)))
+		(text "c2" (rect 216 84 226 95)(font "Arial" (font_size 8)))
+	)
+	(port
+		(pt 232 112)
+		(output)
+		(text "c3" (rect 0 0 14 13)(font "Arial" (font_size 8)))
+		(text "c3" (rect 216 100 226 111)(font "Arial" (font_size 8)))
+	)
+	(port
+		(pt 232 128)
+		(output)
+		(text "c4" (rect 0 0 14 13)(font "Arial" (font_size 8)))
+		(text "c4" (rect 216 116 226 127)(font "Arial" (font_size 8)))
+	)
+	(drawing
+		(text "Cyclone IV E" (rect 162 179 375 367)(font "Arial" ))
+		(text "inclk0 frequency: 10.000 MHz" (rect 50 60 217 129)(font "Arial" ))
+		(text "Operation Mode: Normal" (rect 50 71 197 151)(font "Arial" ))
+		(text "Clk " (rect 51 89 114 187)(font "Arial" ))
+		(text "Ratio" (rect 70 89 160 187)(font "Arial" ))
+		(text "Ph (dg)" (rect 95 89 218 187)(font "Arial" ))
+		(text "DC (%)" (rect 128 89 284 187)(font "Arial" ))
+		(text "c0" (rect 53 101 114 211)(font "Arial" ))
+		(text "1/1" (rect 74 101 158 211)(font "Arial" ))
+		(text "0.00" (rect 100 101 216 211)(font "Arial" ))
+		(text "50.00" (rect 131 101 283 211)(font "Arial" ))
+		(text "c1" (rect 53 113 113 235)(font "Arial" ))
+		(text "1/1" (rect 74 113 158 235)(font "Arial" ))
+		(text "72.00" (rect 98 113 217 235)(font "Arial" ))
+		(text "50.00" (rect 131 113 283 235)(font "Arial" ))
+		(text "c2" (rect 53 125 114 259)(font "Arial" ))
+		(text "1/1" (rect 74 125 158 259)(font "Arial" ))
+		(text "144.00" (rect 95 125 216 259)(font "Arial" ))
+		(text "50.00" (rect 131 125 283 259)(font "Arial" ))
+		(text "c3" (rect 53 137 114 283)(font "Arial" ))
+		(text "1/1" (rect 74 137 158 283)(font "Arial" ))
+		(text "216.00" (rect 95 137 216 283)(font "Arial" ))
+		(text "50.00" (rect 131 137 283 283)(font "Arial" ))
+		(text "c4" (rect 53 149 114 307)(font "Arial" ))
+		(text "1/1" (rect 74 149 158 307)(font "Arial" ))
+		(text "288.00" (rect 95 149 216 307)(font "Arial" ))
+		(text "50.00" (rect 131 149 283 307)(font "Arial" ))
+		(line (pt 0 0)(pt 233 0))
+		(line (pt 233 0)(pt 233 193))
+		(line (pt 0 193)(pt 233 193))
+		(line (pt 0 0)(pt 0 193))
+		(line (pt 48 87)(pt 158 87))
+		(line (pt 48 98)(pt 158 98))
+		(line (pt 48 110)(pt 158 110))
+		(line (pt 48 122)(pt 158 122))
+		(line (pt 48 134)(pt 158 134))
+		(line (pt 48 146)(pt 158 146))
+		(line (pt 48 158)(pt 158 158))
+		(line (pt 48 87)(pt 48 158))
+		(line (pt 67 87)(pt 67 158)(line_width 3))
+		(line (pt 92 87)(pt 92 158)(line_width 3))
+		(line (pt 125 87)(pt 125 158)(line_width 3))
+		(line (pt 157 87)(pt 157 158))
+		(line (pt 40 48)(pt 199 48))
+		(line (pt 199 48)(pt 199 175))
+		(line (pt 40 175)(pt 199 175))
+		(line (pt 40 48)(pt 40 175))
+		(line (pt 231 64)(pt 199 64))
+		(line (pt 231 80)(pt 199 80))
+		(line (pt 231 96)(pt 199 96))
+		(line (pt 231 112)(pt 199 112))
+		(line (pt 231 128)(pt 199 128))
+	)
+)

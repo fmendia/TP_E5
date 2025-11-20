@@ -102,22 +102,6 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect -432 592 -264 608)
-	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "reg_flag" (rect 16 0 54 12)(font "Intel Clear" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
 	(rect -432 464 -264 480)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "qmemo[31..0]" (rect 5 0 69 11)(font "Arial" ))
@@ -150,9 +134,9 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect -432 368 -264 384)
+	(rect 520 648 688 664)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "opcode[6..0]" (rect 5 0 64 11)(font "Arial" ))
+	(text "Imm[31..0]" (rect 5 0 55 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -166,9 +150,25 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect 520 648 688 664)
+	(rect 280 112 456 128)
+	(text "INPUT" (rect 133 0 161 9)(font "Arial" (font_size 6)))
+	(text "OpCode_R[6..0]" (rect 5 0 82 11)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect -432 368 -264 384)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "Imm[31..0]" (rect 5 0 55 11)(font "Arial" ))
+	(text "OpCodeW[6..0]" (rect 5 0 79 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -506,28 +506,28 @@ on the Quartus Prime software download page.
 		(pt 256 32)
 		(output)
 		(text "mem_address[9..0]" (rect 0 0 90 11)(font "Arial" ))
-		(text "mem_address[9..0]" (rect 159 27 235 38)(font "Arial" ))
+		(text "mem_address[9..0]" (rect 159 27 249 38)(font "Arial" ))
 		(line (pt 256 32)(pt 240 32)(line_width 3))
 	)
 	(port
 		(pt 256 48)
 		(output)
 		(text "byte_enable[3..0]" (rect 0 0 81 11)(font "Arial" ))
-		(text "byte_enable[3..0]" (rect 167 43 235 54)(font "Arial" ))
+		(text "byte_enable[3..0]" (rect 167 43 248 54)(font "Arial" ))
 		(line (pt 256 48)(pt 240 48)(line_width 3))
 	)
 	(port
 		(pt 256 64)
 		(output)
 		(text "store_data_aligned[31..0]" (rect 0 0 120 11)(font "Arial" ))
-		(text "store_data_aligned[31..0]" (rect 134 59 235 70)(font "Arial" ))
+		(text "store_data_aligned[31..0]" (rect 134 59 254 70)(font "Arial" ))
 		(line (pt 256 64)(pt 240 64)(line_width 3))
 	)
 	(port
 		(pt 256 80)
 		(output)
 		(text "mem_write" (rect 0 0 51 11)(font "Arial" ))
-		(text "mem_write" (rect 192 75 235 86)(font "Arial" ))
+		(text "mem_write" (rect 192 75 243 86)(font "Arial" ))
 		(line (pt 256 80)(pt 240 80))
 	)
 	(drawing
@@ -570,11 +570,33 @@ on the Quartus Prime software download page.
 		(pt 232 32)
 		(output)
 		(text "reg_data[31..0]" (rect 0 0 71 11)(font "Arial" ))
-		(text "reg_data[31..0]" (rect 151 27 211 38)(font "Arial" ))
+		(text "reg_data[31..0]" (rect 151 27 222 38)(font "Arial" ))
 		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 216 96))
+	)
+)
+(symbol
+	(rect -184 680 0 760)
+	(text "FMiche" (rect 5 0 40 11)(font "Arial" ))
+	(text "inst" (rect 8 64 24 75)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "opcode[6..0]" (rect 0 0 59 11)(font "Arial" ))
+		(text "opcode[6..0]" (rect 21 27 80 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 184 32)
+		(output)
+		(text "reg_flag" (rect 0 0 38 11)(font "Arial" ))
+		(text "reg_flag" (rect 131 27 169 38)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 168 64))
 	)
 )
 (connector
@@ -650,12 +672,6 @@ on the Quartus Prime software download page.
 	(pt 544 376)
 )
 (connector
-	(text "op_code[6..0]" (rect -201 360 -135 372)(font "Intel Clear" ))
-	(pt -264 376)
-	(pt -104 376)
-	(bus)
-)
-(connector
 	(pt 872 328)
 	(pt 824 328)
 	(bus)
@@ -688,12 +704,6 @@ on the Quartus Prime software download page.
 (connector
 	(pt 544 328)
 	(pt 512 328)
-	(bus)
-)
-(connector
-	(text "op_code[6..0]" (rect 471 112 537 124)(font "Intel Clear" ))
-	(pt 584 128)
-	(pt 456 128)
 	(bus)
 )
 (connector
@@ -766,14 +776,6 @@ on the Quartus Prime software download page.
 	(pt 1216 656)
 )
 (connector
-	(pt 112 512)
-	(pt 112 600)
-)
-(connector
-	(pt 112 600)
-	(pt -264 600)
-)
-(connector
 	(pt -72 624)
 	(pt -72 584)
 	(bus)
@@ -817,7 +819,63 @@ on the Quartus Prime software download page.
 	(pt 808 312)
 	(bus)
 )
+(connector
+	(pt 112 512)
+	(pt 112 712)
+)
+(connector
+	(pt 112 712)
+	(pt 0 712)
+)
+(connector
+	(pt -184 712)
+	(pt -496 712)
+	(bus)
+)
+(connector
+	(pt -496 712)
+	(pt -496 296)
+	(bus)
+)
+(connector
+	(pt -216 376)
+	(pt -216 296)
+	(bus)
+)
+(connector
+	(pt -496 296)
+	(pt -216 296)
+	(bus)
+)
+(connector
+	(pt -264 376)
+	(pt -216 376)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS24147>>" (rect -201 360 -74 372)(font "Intel Clear" )(invisible))
+	(pt -216 376)
+	(pt -104 376)
+	(bus)
+)
+(connector
+	(pt 576 128)
+	(pt 576 120)
+	(bus)
+)
+(connector
+	(pt 584 128)
+	(pt 576 128)
+	(bus)
+)
+(connector
+	(text "op_code[6..0]" (rect 471 104 537 116)(font "Intel Clear" ))
+	(pt 576 120)
+	(pt 456 120)
+	(bus)
+)
 (junction (pt 840 296))
 (junction (pt 824 328))
 (junction (pt 808 312))
 (junction (pt -256 584))
+(junction (pt -216 376))

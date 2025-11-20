@@ -5,14 +5,18 @@ module latch_s4_s5 (
     input  wire        flush,
     input  wire [31:0] alu_result_in,
     input  wire [4:0]  rd_in,
-    input  wire [15:0] instr_flags_in,
+    input  wire [6:0] instr_flags_in,
+    input  wire [2:0]  funct3_in,
     output reg  [31:0] alu_result_out,
     output reg  [4:0]  rd_out,
-    output reg  [15:0] instr_flags_out
+    output reg  [6:0] instr_flags_out,
+	 output reg  [2:0]  funct3_out
+
+	 
 );
 
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n || flush) begin
+    always @(posedge clk) begin
+        if (flush) begin
             alu_result_out <= 32'b0;
             rd_out <= 5'b0;
             instr_flags_out <= 16'b0;

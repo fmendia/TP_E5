@@ -9,18 +9,21 @@ module latch_id_s3 (
     input  wire [6:0]  funct7_in,
     input  wire [2:0]  funct3_in,
     input  wire [31:0] imm_in,
-    input  wire [15:0] instr_flags_in,
+    input  wire [6:0] instr_flags_in,
+	 input  wire  [31:0] PC_in,
     output reg  [4:0]  rs1_out,
     output reg  [4:0]  rs2_out,
     output reg  [4:0]  rd_out,
     output reg  [6:0]  funct7_out,
     output reg  [2:0]  funct3_out,
     output reg  [31:0] imm_out,
-    output reg  [15:0] instr_flags_out
+    output reg  [6:0] instr_flags_out,
+	 output reg  [31:0] PC_out
 );
 
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n || flush) begin
+    always @(posedge clk) begin
+        if (flush) begin
+				PC_out  <= PC_in;
             rs1_out <= 5'b0;
             rs2_out <= 5'b0;
             rd_out  <= 5'b0;
