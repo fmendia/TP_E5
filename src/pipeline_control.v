@@ -52,7 +52,7 @@ module pipeline_control (
         stall_needed = 1'b0;
 
         // --- RAW1: Conflicto D vs R (Distancia 1) ---
-        if ((rs1_D == rd_R && rs1_D != 5'd0) || (rs2_D == rd_R && rs2_D != 5'd0)) 
+        if ((rs1_D == rd_R && rs1_D != 5'd0) || (rs2_D == rd_R && rs2_D != 5'd0))
             hazard_RAW1 = 1'b1;
 
         // --- RAW2: Conflicto D vs E (Distancia 2) ---
@@ -111,7 +111,7 @@ module pipeline_control (
         else if (stall_needed) begin
             // Congelamos el estado actual de Fetch y Decode
             enable_IFU  = 1'b0; // No buscar nueva instrucción
-            enable_F_D  = 1'b1; // PC y Latch F/D se quedan quietos
+            enable_F_D  = 1'b0; // PC y Latch F/D se quedan quietos
 
             // Inyectamos una burbuja hacia adelante (hacia R)
             flush_D_R   = 1'b1; // La etapa R recibe un NOP en el siguiente ciclo

@@ -21,6 +21,7 @@ after 2500 simTimestamp
 run -all
 quit -f
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,6 +40,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -1508,11 +1510,6 @@ SIGNAL("resetn")
 	PARENT = "";
 }
 
-GROUP("pipeline")
-{
-	MEMBERS = "r", "s", "t", "u", "v", "w", "x", "y", "z";
-}
-
 SIGNAL("PC_out")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -2021,11 +2018,6 @@ SIGNAL("clk4")
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
 	PARENT = "";
-}
-
-GROUP("clks")
-{
-	MEMBERS = "clk1", "clk2", "clk3", "clk4";
 }
 
 SIGNAL("rs1dA")
@@ -3918,6 +3910,16 @@ SIGNAL("predecoder[0]")
 	PARENT = "predecoder";
 }
 
+GROUP("pipeline")
+{
+	MEMBERS = "r", "s", "t", "u", "v", "w", "x", "y", "z";
+}
+
+GROUP("clks")
+{
+	MEMBERS = "clk1", "clk2", "clk3", "clk4";
+}
+
 TRANSITION_LIST("A[31]")
 {
 	NODE
@@ -4501,9 +4503,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
@@ -5577,9 +5579,9 @@ TRANSITION_LIST("clk1")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
@@ -5591,9 +5593,9 @@ TRANSITION_LIST("clk2")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
@@ -5605,9 +5607,9 @@ TRANSITION_LIST("clk3")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
@@ -5619,9 +5621,9 @@ TRANSITION_LIST("clk4")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
 		}
 	}
 }
