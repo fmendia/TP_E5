@@ -38,6 +38,10 @@ module OperandBuilder (
                 A = pc;
                 B = 4;
             end
+            7'b1100011: begin// BRANCH (B-TYPE)
+                A = rs1d;
+                B = rs2d;      // comparación rs1 vs rs2
+            end
 
 
             default: begin

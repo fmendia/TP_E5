@@ -11,13 +11,14 @@ module alu (
         Result = 32'b0;     // valor por defecto
         CCR_flags = 6'b0;   // valor por defecto del CCR
 
-        //Definir flgas del CCR
+        //Definir flags del CCR
         if(A==B) begin
             CCR_flags[5] = 1;   // EQ
             CCR_flags[2] = 1;   // GE
             CCR_flags[0] = 1;   // GEU           
         end
-        else begin
+        else begin //Acá ya puede ser mayor o menor
+				CCR_flags[4] = 1; //NE
             //Unsigned:
             if(A<B) begin
                 CCR_flags[1] = 1;
