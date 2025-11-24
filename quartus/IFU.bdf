@@ -119,6 +119,22 @@ on the Quartus Prime software download page.
 	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect 104 96 272 112)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "IFU_rst" (rect 5 0 41 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 672 56 848 72)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
@@ -196,23 +212,6 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 152 64))
 	)
 	(rotate180)
-)
-(symbol
-	(rect 296 104 328 136)
-	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
-	(text "inst2" (rect 3 21 27 33)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
-	)
 )
 (symbol
 	(rect 440 296 600 408)
@@ -584,6 +583,10 @@ on the Quartus Prime software download page.
 	(text "enableIFUs" (rect 362 112 416 124)(font "Intel Clear" ))
 	(pt 416 112)
 	(pt 360 112)
+)
+(connector
+	(pt 272 104)
+	(pt 312 104)
 )
 (junction (pt 200 224))
 (junction (pt 200 320))

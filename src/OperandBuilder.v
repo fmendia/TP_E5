@@ -34,9 +34,9 @@ module OperandBuilder (
                 A = pc;
                 B = 4;
             end
-				7'b1100111: begin //JALR
-                A = pc;
-                B = 4;
+				7'b1100111: begin //JALR: A = rs1, B = imm
+                A = rs1d;
+                B = imm;
             end
             7'b1100011: begin// BRANCH (B-TYPE)
                 A = rs1d;

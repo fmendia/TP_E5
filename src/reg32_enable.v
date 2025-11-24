@@ -11,7 +11,7 @@ module reg32_enable (
 
     reg [31:0] q;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst)
             q <= 32'd0;
         // Si no hay reset, solo actualiza si 'en' está activo (1)

@@ -26,7 +26,7 @@ always @(*) begin
     case(opcode)
         `J: begin
             pc_sel = `PC_ARB;
-            pc_AB = pc + imm_ext;
+            pc_AB = pc + imm_ext - 4;
         end
 
         `I_JALR: begin

@@ -3,6 +3,6 @@ module resta_dos (
     output wire [31:0] dout
 );
 
-assign dout = (din > 32'd8) ? (din - 32'd8) : 32'd0;
+assign dout = (din > 32'd12) ? (din - 32'd12) : 32'd0;
 
 endmodule

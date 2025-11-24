@@ -29,7 +29,8 @@ module pipeline_control (
     output reg  flush_R_E,
     output reg  flush_E_W, // Generalmente esta etapa no se flushea, pero la dejo si la usas
     
-    output reg  enable_IFU
+    output reg  enable_IFU,
+	 output reg  flush_IFU
 );
 
     //--------------------------------------------------
@@ -59,7 +60,7 @@ module pipeline_control (
         if ((rs1_D == rd_E && rs1_D != 5'd0) || (rs2_D == rd_E && rs2_D != 5'd0)) 
             hazard_RAW2 = 1'b1;
             
-        // --- RAW3: Conflicto D vs W (Distancia 3) --- [NUEVO]
+        // --- RAW3: Conflicto D vs W (Distancia 3) --- 
         // Si W todavía no escribió en el banco, D leería el valor viejo.
         if ((rs1_D == rd_W && rs1_D != 5'd0) || (rs2_D == rd_W && rs2_D != 5'd0)) 
             hazard_RAW3 = 1'b1;
@@ -91,6 +92,7 @@ module pipeline_control (
         flush_D_R   = 1'b0;
         flush_R_E   = 1'b0;
         flush_E_W   = 1'b0;
+		  flush_IFU   = 1'b0;
 
         //------------------------------------------------
         // Prioridad 1: Branch (Control Hazard)
@@ -100,6 +102,7 @@ module pipeline_control (
             flush_F_D  = 1'b1; // Borrar instrucción en Fetch
             flush_D_R  = 1'b1; // Borrar instrucción en Decode
             flush_R_E  = 1'b1; // Borrar instrucción en RegRead (opcional según tu diseño)
+				flush_IFU  = 1'b1; //Borrar instrucción en IFU
             // IFU sigue habilitada para saltar a la nueva dirección
         end
 

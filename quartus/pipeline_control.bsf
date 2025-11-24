@@ -157,6 +157,13 @@ on the Quartus Prime software download page.
 		(text "enable_IFU" (rect 141 155 187 167)(font "Arial" ))
 		(line (pt 208 160)(pt 192 160)(line_width 1))
 	)
+	(port
+		(pt 208 176)
+		(output)
+		(text "flush_IFU" (rect 0 0 40 12)(font "Arial" ))
+		(text "flush_IFU" (rect 147 171 187 183)(font "Arial" ))
+		(line (pt 208 176)(pt 192 176)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 192 192)(line_width 1))
 	)
