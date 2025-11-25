@@ -60,7 +60,7 @@ always @(*) begin
             endcase
 
             if (pc_sel == `PC_ARB) begin
-                pc_AB = pc + imm_ext;
+                pc_AB = pc + imm_ext - 4;
             end
         end
         
